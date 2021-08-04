@@ -23,7 +23,27 @@
                 </div>
                 <div class="form-group">
                     <label >Password</label>
-                    <input name="password" type="password" class="form-control"  placeholder="Password">
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-eye-slash"></i></div>
+                            </div>
+                            <input name="password" type="password" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label >Password Confirm</label>
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-eye-slash"></i></div>
+                            </div>
+                            <input name="password confirm" type="password" class="form-control"  placeholder="">
+                        </div>
+                    </div>
+
                 </div>
                 <div class="form-group row">
                     <label class="col-sm 2 col-form-label">Role</label>

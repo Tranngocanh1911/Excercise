@@ -14,6 +14,9 @@
                 </h6>
             </div>
             <div class="card-body">
+                @if(session()->has('add_success'))
+                    {{ session()->get('add_succes') }}
+                    @endif
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
@@ -45,7 +48,8 @@
                                     @endforelse
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <a href="{{route('users.delete', $user->id)}}" class="btn btn-outline-danger">Delete</a>
+                                    <a href="{{route('users.edit', $user->id)}}" class="btn btn-outline-info">Edit</a>
                                 </td>
                             </tr>
                         @empty

@@ -29,4 +29,25 @@ class UserController extends Controller
         $users = User::all();
         return view('admin.users.list',compact('users'));
     }
+
+    function edit($id){
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
+    }
+
+    function update(Request $request, $id){
+        $user = User::findOrFail($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->save();
+        $user->roles()->sync($request->roles);
+        session()->flash('add_success','Add new successfully');
+        return redirect()->route('users.index');
+    }
+    function delete($id){
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('users.index');
+    }
+
 }
